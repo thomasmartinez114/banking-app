@@ -32,9 +32,9 @@ public class Account {
 	// function showing the previous transaction
 	void getPreviousTransaction() {
 		if (previousTransaction > 0) {
-			System.out.println("Deposited: " + previousTransaction);
+			System.out.println("Deposited: $" + previousTransaction);
 		} else if (previousTransaction < 0) {
-			System.out.println("Withdrawn: " + Math.abs(previousTransaction));
+			System.out.println("Withdrawn: $" + Math.abs(previousTransaction));
 		} else {
 			System.out.println("No transaction occurred");
 		}
