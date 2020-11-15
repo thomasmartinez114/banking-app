@@ -1,7 +1,7 @@
 
 public class FirstBank {
 	
-	public static void main(Strings[] args) {
+	public static void main(String[] args) {
 		Account tim = new Account("Tim Statler", "A00001");
 		tim.showMenu();
 	}
