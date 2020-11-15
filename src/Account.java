@@ -63,9 +63,61 @@ public class Account {
 		System.out.println("D. View previous transaction");
 		System.out.println("E. Calculate interest");
 		System.out.println("F. Exit");
+		
+		do {
+			System.out.println();
+			System.out.println("Enter an option: ");
+			char option1 = scanner.next().charAt(0); // Take the first letter/character
+			option = Character.toUpperCase(option1); // to lowercase submission to uppercase
+			System.out.println();
+			
+			switch(option) {
+			// Case 'A' allows the user to check their account balance
+			case 'A':
+				System.out.println("=================================");
+				System.out.println("Balace = $" + balance);
+				System.out.println("=================================");
+				System.out.println();
+				break;
+			// Case B allows to make deposit
+			case 'B':
+				System.out.println("Enter an amount to deposit: ");
+				int amount = scanner.nextInt();
+				deposit(amount);
+				System.out.println();
+				break;
+			// Case C allows the user to withdraw money
+			case 'C':
+				System.out.println("Enter an amount to withdraw: ");
+				int amount2 = scanner.nextInt();
+				withdraw(amount2);
+				System.out.println();
+				break;
+			// Case D allows users to view most recent transaction
+			case 'D':
+				System.out.println("=================================");
+				getPreviousTransaction();
+				System.out.println("=================================");
+				System.out.println();
+				break;
+			// Case E calculate interest rate
+			case 'E':
+				System.out.println("Enter how many years of accrued interest: ");
+				int years = scanner.nextInt();
+				calculateInterest(years);
+				break;
+			// Case F exits the user from their account
+			case 'F':
+				System.out.println("=================================");
+				break;
+			// The default case lets the user know tha they entered invalid letter
+			default:
+				System.out.println("Error: Invalid option. Please enter A, B, C, D, E or F");
+				break;
+			}
+		} while (option != 'F');
+		System.out.println("Thank you for banking with us.");
 	}
-	
-	
 }
 
 
